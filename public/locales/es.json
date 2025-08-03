@@ -1,0 +1,65 @@
+{
+    "nav": {
+        "services": "Servicios",
+        "vehicle": "Vehículo",
+        "driver": "Conductor",
+        "booking": "Reserva",
+        "contact": "Contacto"
+    },
+    "hero": {
+        "title": "Transporte Privado de Pasajeros",
+        "subtitle": "Seguridad, alta calidad, puntualidad y confianza en Santiago, Chile",
+        "cta": "Reserva via Whatsapp"
+    },
+    "services": {
+        "title": "Servicios Vantop",
+        "airport": {
+            "title": "Transporte Aeropuerto",
+            "desc": "Traslados puntuales desde y hacia el aeropuerto, con monitoreo de vuelos."
+        },
+        "events": {
+            "title": "Eventos",
+            "desc": "Transporte para eventos corporativos, congresos y ocasiones especiales."
+        },
+        "hourly": {
+            "title": "Servicio por Horas & Dias",
+            "desc": "Servicio de disposicion dentro y fuera de la ciudad, desde cuatro horas."
+        },
+        "city": {
+            "title": "Turismo & Eco-Turismo",
+            "desc": "Recorridos turísticos por los principales atractivos de la region. Paseos a la nieve, costa y coordillera, ruta de vinos e intereses especiales."
+        }
+    },
+    "vehicle": {
+        "title": "Nuestro Vehículo",
+        "model": "Mercedes V220 Negra",
+        "features": {
+            "passengers": "Capacidad para hasta 7 pasajeros",
+            "luggage": "Vidrios Polarizados",
+            "ac": "Cabina Climatizada",
+            "audio": "Cinturones de Seguridad de 3 puntas",
+            "wifi": "WiFi Disponible",
+            "seats": "Butacas de Cuero Reclinables",
+            "safety": "Sistema de Anclaje para Sillas de Niños (Estándar ISOFIX)"
+        },
+        "description": "Nuestra Mercedes V220 negra ofrece el equilibrio perfecto entre elegancia, comodidad y funcionalidad. Con opciones de 2 a 3 filas de asientos o asientos enfrentados estilo limosina, adaptamos el espacio según sus necesidades específicas."
+    },
+    "contact": {
+        "title": "Contacto",
+        "phone": {
+            "title": "Teléfono",
+            "value": "+56 9 1234 5678"
+        },
+        "email": {
+            "title": "Correo Electrónico",
+            "value": "info@vantop.cl"
+        }
+    },
+    "footer": {
+        "home": "Inicio",
+        "services": "Servicios",
+        "vehicle": "Vehículo",
+        "contact": "Contacto",
+        "copyright": "© 2025 VanTop. Todos los derechos reservados."
+    }
+}

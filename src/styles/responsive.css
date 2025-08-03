@@ -1,0 +1,760 @@
+/* 
+ * VanTop - Servicio de Transporte Privado
+ * Estilos Responsive
+ */
+
+/* Tablet (768px - 1023px) */
+@media screen and (max-width: 1023px) {
+    /* Header */
+    .logo img {
+        height: 40px;
+    }
+    
+    .nav-link {
+        font-size: var(--font-size-xs);
+        padding: var(--spacing-xs) var(--spacing-xs);
+    }
+    
+    /* Toggle de idioma - Versión combinada */
+    .theme-toggle-container label {
+        width: calc(var(--toggle-width-base) * 1.11em); /* Proporción aproximada: 5/4.5 */
+        height: 2.2em;
+    }
+    
+    .toggle-icon {
+        width: 1.8em;
+        height: 1.8em;
+        top: 0.2em;
+    }
+    
+    .toggle-text {
+        font-size: 0.8em;
+    }
+    
+    .toggle-text-es {
+        right: calc(var(--toggle-width-base) * 0.18em); /* Posición proporcional al ancho */
+    }
+    
+    .toggle-text-en {
+        left: calc(var(--toggle-width-base) * 0.18em); /* Posición proporcional al ancho */
+    }
+    
+    /* Hero Section */
+    .hero-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--font-size-lg);
+    }
+    
+    /* Services Section */
+    .mobile-services-grid {
+        gap: var(--spacing-sm);
+        display: none; /* Oculto en tablet */
+    }
+    
+    .mobile-services-grid button {
+        margin: var(--spacing-xs);
+        padding: var(--spacing-xs) var(--spacing-md);
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Vehicle Section */
+    .vehicle-content {
+        gap: var(--spacing-lg);
+    }
+    
+    /* Driver Section */
+    .driver-content {
+        gap: var(--spacing-lg);
+    }
+    
+    /* Contact Section */
+    .contact-content {
+        gap: var(--spacing-lg);
+        grid-template-columns: 2fr 1fr;
+    }
+    
+    .contact-quick-form {
+        max-width: 100%;
+    }
+}
+
+/* Mobile Large (425px - 767px) */
+@media screen and (max-width: 767px) {
+    /* Header */
+    .header {
+        padding: var(--spacing-sm) 0;
+    }
+    
+    .header .container {
+        flex-wrap: wrap;
+        justify-content: space-between; /* Distribuir elementos equitativamente */
+    }
+    
+    /* Ocultar elementos de versión web */
+    .site-title, .language-selector, .desktop-language-menu {
+        display: none;
+    }
+    
+    /* Ajustar el contenedor del menú móvil para que el submenu tenga suficiente espacio */
+    .mobile-language-menu {
+        display: flex;
+        order: 3;
+        margin-left: auto;
+        margin-right: 10px; /* Añadir margen derecho para evitar que el submenu se salga de la pantalla */
+        position: relative;
+        z-index: 1000;
+    }
+    
+    /* Ajustes para el menú de idiomas móvil */
+    .mobile-language-menu .link {
+        padding: 8px 12px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Mejorar visualización de banderas en móvil */
+    .mobile-language-menu .submenu {
+        width: auto; /* Ancho automático basado en el contenido */
+        left: 50%; /* Centrar horizontalmente */
+        right: auto; /* Eliminar alineación a la derecha */
+        transform: translateX(-50%); /* Centrar correctamente */
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 12px;
+        margin-top: 5px;
+        background-color: white;
+        z-index: 1001;
+        min-width: 150px; /* Asegurar un ancho mínimo para que las banderas se vean bien */
+        opacity: 0; /* Inicialmente oculto */
+        visibility: hidden; /* Inicialmente oculto */
+    }
+    
+    /* Comportamiento del submenú al hacer tap en móvil (ahora con clase submenu-active) */
+    .mobile-language-menu .item.submenu-active .submenu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+        pointer-events: auto;
+    }
+    
+    /* Comportamiento del enlace al hacer tap en móvil (ahora con clase submenu-active) */
+    .mobile-language-menu .item.submenu-active .link {
+        color: #ffffff;
+        border-radius: 8px;
+        background-color: var(--color-accent);
+    }
+    
+    .mobile-language-menu .submenu .flag-icon {
+        width: 28px; /* Banderas más grandes en móvil */
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .mobile-language-menu .submenu-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 18px 20px; /* Padding vertical aumentado para área de clic más amplia */
+        margin: 8px 0; /* Mayor espacio entre elementos del submenú para mejor usabilidad táctil */
+        border-radius: 8px; /* Bordes redondeados para cada elemento */
+    }
+    
+    /* Efecto al hacer tap en las banderas */
+    .mobile-language-menu .submenu-link:active,
+    .mobile-language-menu .submenu-link:focus {
+        background-color: var(--color-accent-light);
+    }
+    
+    /* Área de detección de hover ampliada para móvil */
+    .mobile-language-menu .item::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: -20px;
+        width: calc(100% + 40px);
+        height: 70px; /* Área de detección más grande */
+        background-color: transparent;
+        z-index: 5;
+    }
+    
+    /* Toggle de idioma para móvil */
+    .theme-toggle-container {
+        order: 3;
+        margin-right: var(--spacing-md);
+    }
+    
+    .theme-toggle-container label {
+        width: calc(var(--toggle-width-base) * 1em); /* Mantiene el valor base */
+        height: 2em;
+    }
+    
+    .toggle-icon {
+        width: 1.6em;
+        height: 1.6em;
+        top: 0.2em;
+        left: 0.2em;
+    }
+    
+    .toggle-icon i {
+        font-size: 1em;
+    }
+    
+    .toggle-text {
+        font-size: 0.75em;
+        /* Eliminamos el padding, fondo y borde para que no tenga fondo */
+    }
+    
+    .toggle-text-es {
+        right: calc(var(--toggle-width-base) * 0.25em); /* Aumentamos la distancia para evitar superposición */
+    }
+    
+    .toggle-text-en {
+        left: calc(var(--toggle-width-base) * 0.25em); /* Aumentamos la distancia para evitar superposición */
+    }
+    
+    /* Mostrar elementos de versión móvil */
+    .mobile-site-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        order: 2; /* Al centro */
+        flex: 1 0 auto; /* Permitir crecer pero no encogerse */
+        text-align: center; /* Asegurar que el texto esté centrado */
+        width: auto; /* Ancho automático basado en contenido */
+        padding: 0.2rem 0; /* Reducir padding vertical para compensar el aumento de tamaño */
+        min-width: 120px; /* Ancho mínimo para evitar compresión */
+    }
+    
+    /* Estilo específico para el texto dentro de mobile-site-title */
+    .mobile-site-title h2 {
+        font-weight: 700; /* Más grueso que el normal (400) pero no tan pesado como bold (700) */
+        font-size: 1.4rem; /* Ligeramente más grande */
+        margin: 0; /* Eliminar márgenes para evitar aumentar la altura */
+        white-space: nowrap; /* Evitar que el texto se rompa en múltiples líneas */
+    }
+    
+    /* Ajustes específicos para el selector de idioma móvil */
+    .mobile-language-selector.theme-toggle-container {
+        display: flex;
+        order: 3; /* A la derecha */
+        margin-left: auto;
+        margin-right: 0;
+    }
+    
+    /* Ocultar el selector de idioma web en móvil */
+    .language-selector.theme-toggle-container {
+        display: none;
+    }
+    
+    /* Mostrar hamburger en móvil */
+    
+    .hamburger {
+        display: flex;
+        order: 1; /* A la izquierda */
+        z-index: 1002;
+        margin-right: auto; /* Empuja el elemento hacia la izquierda */
+        margin-left: 0; /* Elimina el margen izquierdo para que esté completamente a la izquierda */
+        width: 40px; /* Ancho fijo para evitar expansión excesiva */
+        height: 40px; /* Alto fijo para mantener proporciones */
+        min-width: 40px; /* Asegura que no se comprima */
+        overflow: visible; /* Permite que el SVG sea visible fuera del contenedor */
+        align-items: center; /* Centra verticalmente el contenido */
+        justify-content: center; /* Centra horizontalmente el contenido */
+    }
+    
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        height: 100vh;
+        background-color: var(--color-white);
+        box-shadow: var(--shadow-lg);
+        z-index: 1001;
+        transition: left var(--transition-normal);
+        padding: var(--spacing-2xl) var(--spacing-lg);
+        overflow-y: auto;
+        order: 4; /* Debajo del header en el flujo del documento */
+        flex-basis: 100%;
+    }
+    
+    .main-nav.active {
+        left: 0;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .nav-link {
+        font-size: var(--font-size-md);
+        display: block;
+        padding: var(--spacing-sm) 0;
+    }
+    
+    /* Eliminadas las referencias a mobile-menu-btn.active ya que ha sido reemplazado por hamburger */
+    
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-normal);
+    }
+    
+    .menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Hero Section */
+    .hero {
+        min-height: 500px;
+    }
+    
+    .hero-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--font-size-md);
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    /* Services Section */
+    .section {
+        padding: var(--spacing-2xl) 0;
+    }
+    
+    .section-title {
+        font-size: var(--font-size-2xl);
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .mobile-services-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-lg);
+        display: flex; /* Mostrar en móvil */
+    }
+    
+    .mobile-services-grid button {
+        width: auto;
+        justify-content: center;
+        margin: var(--spacing-xs) 0;
+    }
+    
+    /* Ocultar tarjetas en móvil */
+    .services-grid {
+        display: none;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    /* Vehicle Section */
+    .vehicle-content {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Ajustes para la imagen principal en móvil */
+    .gallery-main {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+    
+    .gallery-main img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    
+    /* Ajustes para el slider de miniaturas en móvil */
+    .gallery-thumbs-container {
+        margin-top: var(--spacing-sm);
+        justify-content: center;
+        height: 50px; /* Ajustar altura para móvil */
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    
+    .gallery-nav {
+        width: 30px;
+        height: 50px; /* Misma altura que el contenedor */
+        font-size: 0.8rem;
+        margin: 0;
+        padding: 0;
+        flex-shrink: 0;
+    }
+    
+    .gallery-thumbs-wrapper {
+        width: 100%; /* Ancho para mostrar 3 miniaturas en móvil: 3*80px + 2*8px (gap) = 256px */
+        height: 50px; /* Misma altura que el contenedor */
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+    
+    .gallery-thumbs {
+        height: 50px; /* Ajustar altura para móvil */
+        width: auto;
+    }
+    
+    .thumb {
+        height: 50px; /* Ajustar altura para móvil manteniendo proporción */
+        width: 80px;
+        object-fit: cover;
+    }
+    
+    /* Ajustes para la información del vehículo en móvil */
+    .vehicle-info {
+        width: 100%;
+        max-width: 100%;
+        padding: var(--spacing-md);
+        box-sizing: border-box;
+    }
+    
+    /* Indicador visual para navegación táctil en móviles */
+    .gallery-thumbs-wrapper::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 4px;
+        background-color: var(--color-light-gray);
+        border-radius: 2px;
+        opacity: 0.7;
+    }
+    
+    /* Driver Section */
+    .driver-content {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Booking Form Section */
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+/* Contact Section */
+.contact-content {
+    padding-top: var(--spacing-md);
+}
+
+.contact-info {
+    margin-top: var(--spacing-lg);
+}
+
+.contact-quick-form {
+    max-width: 100%;
+    order: 1;
+    padding: var(--spacing-md);
+    width: 95%;
+}
+    
+    .contact-info {
+        order: 2;
+    }
+    
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: var(--spacing-lg);
+    }
+    
+    .footer-links ul {
+        justify-content: center;
+    }
+    
+    .footer-language {
+        margin-left: 0;
+    }
+}
+
+/* Mobile Small (320px - 424px) */
+@media screen and (max-width: 424px) {
+    /* Header */
+    .logo img {
+        height: 35px;
+    }
+    
+    /* Ajustar tamaño del hamburger para móviles pequeños */
+    .hamburger svg {
+        height: 30px; /* Tamaño fijo en píxeles en lugar de unidades relativas */
+        width: 30px; /* Ancho fijo para mantener proporciones */
+        max-height: 30px; /* Limita la altura máxima */
+        max-width: 30px; /* Limita el ancho máximo */
+    }
+    
+    /* Ajuste para el título móvil en pantallas pequeñas */
+    .mobile-site-title h2 {
+        font-size: 1.2rem; /* Tamaño más pequeño para pantallas muy pequeñas */
+    }
+    
+    /* Ajustes adicionales para el header en pantallas muy pequeñas */
+    .header .container {
+        padding: 0 var(--spacing-sm); /* Reducir el padding horizontal */
+    }
+    
+    /* Asegurar que el hamburger no se expanda en pantallas muy pequeñas */
+    .hamburger {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+    }
+    
+    /* Ajustes para el menú de idiomas en pantallas muy pequeñas */
+    .mobile-language-menu {
+        margin-right: 15px; /* Aumentar el margen derecho para pantallas más pequeñas */
+    }
+    
+    .mobile-language-menu .link {
+        padding: 6px 10px;
+        border-radius: 6px;
+    }
+    
+    .mobile-language-menu .globe-icon {
+        width: 20px;
+        height: auto;
+    }
+    
+    /* Mejorar visualización de banderas en pantallas muy pequeñas */
+    .mobile-language-menu .submenu .flag-icon {
+        width: 25px; /* Banderas más grandes en móviles pequeños */
+        height: auto;
+    }
+    
+    /* Mantener el área de detección amplia incluso en pantallas pequeñas */
+    .mobile-language-menu .item::before {
+        height: 60px; /* Área de detección más grande en pantallas pequeñas */
+    }
+    
+    /* Ajustes adicionales para el submenú en pantallas muy pequeñas */
+    .mobile-language-menu .submenu {
+        min-width: 130px; /* Ancho mínimo ligeramente menor */
+        width: 160px; /* Ancho aumentado para mejor visibilidad en pantallas pequeñas */
+        left: 50%; /* Mantener centrado horizontalmente */
+        right: auto; /* Eliminar alineación a la derecha */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25); /* Sombra más pronunciada */
+    }
+    
+    /* Asegurar que las animaciones sean suaves en dispositivos móviles */
+    .mobile-language-menu .item.submenu-active .link svg,
+    .mobile-language-menu .item.hover .link svg {
+        transform: rotate(-180deg); /* Rotación fija de 180 grados */
+        animation: svgPulse 2s infinite ease-in-out;
+    }
+    
+    .mobile-language-menu .submenu-link:active .flag-icon,
+    .mobile-language-menu .submenu-link:focus .flag-icon {
+        animation: flagPulse 1.5s infinite ease-in-out;
+        transform: scale(1.2); /* Hacer las banderas ligeramente más grandes al tocarlas */
+    }
+    
+    /* Definición de la animación svgPulse si no existe */
+    @keyframes svgPulse {
+        0% {
+            transform: rotate(-180deg) scale(1);
+        }
+        50% {
+            transform: rotate(-180deg) scale(1.1);
+        }
+        100% {
+            transform: rotate(-180deg) scale(1);
+        }
+    }
+    
+    /* Toggle de idioma para móvil pequeño */
+    .theme-toggle-container label {
+        width: calc(var(--toggle-width-base) * 0.89em); /* Proporción aproximada: 4/4.5 */
+        height: 1.8em;
+    }
+    
+    .toggle-icon {
+        width: 1.4em;
+        height: 1.4em;
+        top: 0.2em;
+        left: 0.2em;
+    }
+    
+    .toggle-icon i {
+        font-size: 0.9em;
+    }
+    
+    .toggle-text {
+        font-size: 0.7em;
+        /* Eliminamos el padding, fondo y borde para que no tenga fondo */
+    }
+    
+    .toggle-text-es {
+        right: calc(var(--toggle-width-base) * 0.22em); /* Aumentamos la distancia para evitar superposición */
+    }
+    
+    .toggle-text-en {
+        left: calc(var(--toggle-width-base) * 0.22em); /* Aumentamos la distancia para evitar superposición */
+    }
+    
+    /* Hero Section */
+    .hero-title {
+        font-size: var(--font-size-xl);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--font-size-sm);
+    }
+    
+    .cta-button {
+        padding: var(--spacing-sm) var(--spacing-lg);
+        font-size: var(--font-size-sm);
+    }
+    
+    /* Services Section */
+    .mobile-services-grid button {
+        width: auto;
+        font-size: var(--font-size-sm);
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    .mobile-services-grid button i {
+        font-size: 1rem;
+    }
+    
+    .service-card {
+        padding: var(--spacing-lg);
+    }
+    
+    /* Vehicle Section */
+    .vehicle-features li {
+        font-size: var(--font-size-sm);
+    }
+    
+    /* Driver Section */
+    .driver-info h3 {
+        font-size: var(--font-size-xl);
+    }
+    
+    /* Booking Form Section */
+    .booking-form {
+        padding: var(--spacing-lg);
+    }
+    
+    /* Contact Section */
+    .contact-quick-form {
+        padding: var(--spacing-lg);
+    }
+    
+    /* Footer */
+    .footer {
+        padding: var(--spacing-xl) 0 var(--spacing-md);
+    }
+}
+
+/* Landscape Mode */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        height: auto;
+        min-height: 400px;
+        padding: var(--spacing-3xl) 0;
+    }
+    
+    .main-nav.active {
+        padding-top: var(--spacing-xl);
+    }
+    
+    .main-nav ul {
+        gap: var(--spacing-sm);
+    }
+}
+
+/* High Resolution Screens */
+@media screen and (min-width: 1440px) {
+    :root {
+        --font-size-xs: 0.875rem;   /* 14px */
+        --font-size-sm: 1rem;       /* 16px */
+        --font-size-md: 1.125rem;   /* 18px */
+        --font-size-lg: 1.25rem;    /* 20px */
+        --font-size-xl: 1.5rem;     /* 24px */
+        --font-size-2xl: 1.875rem;  /* 30px */
+        --font-size-3xl: 2.25rem;   /* 36px */
+        --font-size-4xl: 3rem;      /* 48px */
+    }
+    
+    .container {
+        max-width: 1400px;
+    }
+    
+    .hero {
+        min-height: 800px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .header, .footer, .booking-form, .contact-quick-form, .cta-button, .hamburger, .language-selector {
+        display: none;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+        background: #fff;
+    }
+    
+    .hero {
+        height: auto;
+        min-height: auto;
+        background-image: none;
+        color: #000;
+        padding: 1cm 0;
+    }
+    
+    .hero-title, .hero-subtitle {
+        color: #000;
+    }
+    
+    .section {
+        padding: 1cm 0;
+        page-break-inside: avoid;
+    }
+    
+    a {
+        text-decoration: underline;
+        color: #000;
+    }
+    
+    .section-title::after {
+        display: none;
+    }
+    
+    .vehicle-content, .driver-content, .contact-content {
+        grid-template-columns: 1fr;
+    }
+}

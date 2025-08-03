@@ -1,0 +1,65 @@
+{
+    "nav": {
+        "services": "Services",
+        "vehicle": "Vehicle",
+        "driver": "Driver",
+        "booking": "Booking",
+        "contact": "Contact"
+    },
+    "hero": {
+        "title": "Private Passenger Transportation",
+        "subtitle": "Safety, high quality, punctuality and trust in Santiago, Chile",
+        "cta": "Book via Whatsapp"
+    },
+    "services": {
+        "title": "Vantop Services",
+        "airport": {
+            "title": "Airport Transportation",
+            "desc": "Punctual transfers to and from the airport, with flight monitoring."
+        },
+        "events": {
+            "title": "Events",
+            "desc": "Transportation for corporate events, conferences and special occasions."
+        },
+        "hourly": {
+            "title": "Hourly & Daily Service",
+            "desc": "Disposal service within and outside the city, from four hours."
+        },
+        "city": {
+            "title": "Tourism & Eco-Tourism",
+            "desc": "Tourist tours of the main attractions of the region. Snow trips, coast and mountains, wine route and special interests."
+        }
+    },
+    "vehicle": {
+        "title": "Our Vehicle",
+        "model": "Black Mercedes V220",
+        "features": {
+            "passengers": "Capacity for up to 7 passengers",
+            "luggage": "Tinted Windows",
+            "ac": "Air Conditioned Cabin",
+            "audio": "3-Point Safety Belts",
+            "wifi": "WiFi Available",
+            "seats": "Reclining Leather Seats",
+            "safety": "Child Seat Anchor System (ISOFIX Standard)"
+        },
+        "description": "Our black Mercedes V220 offers the perfect balance between elegance, comfort and functionality. With options for 2 to 3 rows of seats or limousine-style facing seats, we adapt the space according to your specific needs."
+    },
+    "contact": {
+        "title": "Contact",
+        "phone": {
+            "title": "Phone",
+            "value": "+56 9 1234 5678"
+        },
+        "email": {
+            "title": "Email",
+            "value": "info@vantop.cl"
+        }
+    },
+    "footer": {
+        "home": "Home",
+        "services": "Services",
+        "vehicle": "Vehicle",
+        "contact": "Contact",
+        "copyright": "© 2025 VanTop. All rights reserved."
+    }
+}
